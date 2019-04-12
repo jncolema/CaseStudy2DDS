@@ -119,3 +119,8 @@ test <- EmpInfo2[-train_indices,]
 #k=3 Confusion Matrix
 class::knn(train[,c()], test[,-3], train$Attrition, k=3)
 confusionMatrix
+
+
+Use linear regression for prediction
+
+Use KNN for classification
