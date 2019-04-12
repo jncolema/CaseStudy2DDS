@@ -92,7 +92,7 @@ EmpCorrelations <- cor(EmpInfo2 %>% keep(is.integer))
 # EmpCorrelations <- cor(EmpInfo[,-c(10, 23, 28)] %>% keep(is.integer))
 corrplot(EmpCorrelations, type = "lower", diag = TRUE)
 
-
+#Attrition by variable
 DeptAttr <- table(EmpInfo2$Department,EmpInfo2$Attrition)
 margin.table(DeptAttr, 1) # Department Totals 
 margin.table(DeptAttr, 2) # Attrition Totals
@@ -100,6 +100,11 @@ margin.table(DeptAttr, 2) # Attrition Totals
 prop.table(DeptAttr) # cell percentages
 prop.table(DeptAttr, 1) # row percentages 
 prop.table(DeptAttr, 2) # column percentages
+
+
+# list of variable names
+variables <- sort(names(EmpInfo2))
+
 
 #KNN
 # install.packages("caret")
