@@ -12,7 +12,7 @@ knitr::opts_chunk$set(echo = TRUE)
 #Introduction
 The DDS Analytics team has outlined our analysis for areas of focus for the talent management team at Frito Lay. We were provided with 3 data sets which included a range of demographic, performance, and/or survey information from existing employees. While we were not given the reason an employee chooses to stay with or leave the company, we were able to use the information given to build and validate an employee attrition classification model. We were also tasked with building a predictive model for an employee's monthly income. The prediction results and final presentation of this anaylsis can be found through the links below:
 
-#### Youtube Presentation :
+#### Youtube Presentation: https://youtu.be/uSzq2ExTqFQ
 #### GitHub Repo: https://github.com/jncolema/CaseStudy2DDS
 
 #Analysis
@@ -325,18 +325,17 @@ ggplot(data=EmpInfo2, aes(x=YearsInCurrentRole, fill=Attrition)) + ylab("Percent
 ggplot(data=EmpInfo2, aes(x=YearsWithCurrManager, fill=Attrition)) + ylab("Percent") +
   geom_histogram(aes(y=(..count..)/sum(..count..))) 
 ```
+
 ####Observations
 - The attrition rate appears to increase the more an employee feels they have to travel
 - The Sales department has the highest attrition rate (21.6%) followed by HR (17.1%) and R&D (13.3%).
-- Withing these departments, Managers and Directors have the lowest attrition rates.
-    -- Is there a correlation with years in job and job role? --
-    -- Is there a correlation with income and job role? --
+- Within these departments, Managers and Directors have the lowest attrition rates.
 - This is inline with the overtime attrition rates as employees who work overtime (non-expempt) have a higher attrition rate of 31.2% compared to 9.7% for those who are salaried (typicaly upper level management).
--Attrition is also highest for employees in lower job levels.  
--Oddly, attrition rates are highest with employees who either have the highest (21.8%) or lowest (25.9%) stock options available (levels 0 and 3), with the middle levels both having attrition rates less than 10%.
+- Attrition is also highest for employees in lower job levels.  
+- Oddly, attrition rates are highest with employees who either have the highest (21.8%) or lowest (25.9%) stock options available (levels 0 and 3), with the middle levels both having attrition rates less than 10%.
 - Interestingly Divorces employees have the lowest attrition rate at 6.2%, whereas 26% of employees who are single do not choose to stay with the company.
 - An employee's environment only appears to increase attrition when rated as most unsatisfactory. This trend also applys to employees who feel like they have a poor work life balance.
--Attrition also appears to increase as Job Involvement Increases (assuming scores range from 1 as little to no involvment to 4 as High Involement) and decrease as Job Satisfaction increases.  
+- Attrition also appears to increase as Job Involvement Increases (assuming scores range from 1 as little to no involvement to 4 as High Involvement) and decrease as Job Satisfaction increases.  
 
 
 ##Classifing Attrition: Naive Bayes Model
